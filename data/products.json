@@ -20,7 +20,7 @@
     "title": "Shuffle Essentials",
     "price": 29.99,
     "tags": ["accessories", "daily"],
-    "image": "shuffle_essentials.webp",
+    "image": "shuffle_essentials.avif",
     "description": "Your daily essential accessory set."
   },
   {
@@ -68,7 +68,7 @@
     "title": "Ket Club Mug",
     "price": 15.99,
     "tags": ["home", "mug"],
-    "image": "ket_club.jpg",
+    "image": "ket_club.avif",
     "description": "A premium mug for coffee lovers."
   },
   {

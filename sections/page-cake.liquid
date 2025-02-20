@@ -1,31 +1,75 @@
 <div class="pageheader">
-    <div class="coloors">
-        <div class="divcenter">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbUHW_D3Ka-LdkfAZVnqhf6LpXjnKHfEx0Uw&s"
+    <div>
+        <div class="">
+            <img src="https://logopond.com/logos/c3cd48c8e369a756251ff09235ae411e.png"
                 alt="" width="100px">
-            <h1>JKANIME</h1>
         </div>
-
+        <br>
         <p style="color:white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi odio voluptate quis,
             sapiente quisquam doloremque ipsam recusandae molestiae perspiciatis commodi excepturi et fugiat harum
             dolore
             aut veniam, impedit, mollitia dolores.</p>
     </div>
-    <div class="coloors">
+    <div class="">
         <div class="navbar">
-            <ol>HOME</ol>
-            <ol>CART</ol>
-            <ol>ALL PRODUCTOS</ol>
+            <ol class="navlink">HOME</ol>
+            <ol class="navlink">CART</ol>
+            <ol class="navlink">ALL PRODUCTOS</ol>
         </div>
-        <div>
-            <h1>we accept papypal o cripto</h1>
+        <br>
+        <div style="color: white;" class="divcenter">
+            <p>we accept papypal o cripto</p>
         </div>
 
     </div>
-    <div class="coloors">
+    <div style="color: white;">
         <p>suscribe and recibe</h1>
             <br>
-            <input type="email" name="email" placeholder="Enter Email">
-        <h1>facebook x sadsadas</h1>
+            <div class="email-container">
+                <br>
+                <input type="email" placeholder="Enter Email" class="email-input" />
+                <button class="email-btn">
+                  <span class="arrow">→</span>
+                </button>
+            </div>
+            <br>
+        <p style="font-size: 10px;">FACEBOOK X TWITTER INSTAGRAM</p>
     </div>
 </div>
+
+<style>
+    .email-container {
+  display: flex;
+  align-items: center;
+  background-color: #1a1525; /* Fondo oscuro */
+  padding: 10px 15px;
+  border-radius: 5px;
+  width: fit-content;
+}
+
+.email-input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 16px;
+  flex: 1;
+}
+
+.email-input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.email-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #6a00f4; /* Color morado */
+  font-size: 20px;
+  transition: transform 0.3s ease;
+}
+
+.email-btn:hover {
+  transform: translateX(5px);
+}
+</style>

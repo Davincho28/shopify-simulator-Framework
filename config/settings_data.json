@@ -30,6 +30,12 @@
           { "label": "Terms of Service", "url": "/terms-of-service" }
         ]
       }
+    },
+    "names":{
+      "type":"text",
+      "settings":{
+        "ket_club":"ket_club"
+      }
     }
   }
 }

@@ -1,0 +1,12 @@
+<div>
+    {% if product.image | asset_url %}
+        <picture>
+            <source srcset="{{ 'assets/' | append: product.image }}" type="image/avif">
+            <img src={{ product.image | asset_url | img_tag:product.title}} style="height: 200px; width: 200px;" >
+        </picture>
+        <h1>{{product.title}} {{product.price}}</h1>
+        <button>
+          carrito de compras
+        </button>
+    {% endif %}
+</div>
