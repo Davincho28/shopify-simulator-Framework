@@ -1,5 +1,15 @@
 # Shopify Simulator Documentation
 
+Muchas gracias por darme la oportunidad de participar en esta prueba tecnica, falta algunas cosas como el responsive
+y organizar mejor las carpetas y optimizar el codigo, me diverti haciendo este aplicativo y es una experiencia grandisima
+ya que no habia indagado mucho sobre liquid, me entere que era el lenguaje de shopify, quedo atento a cualquier novedad,
+seguire trabajando en este proyecto cuando tenga tiempo y pulir bastante los detalles ya que me causo una curiosidad enorme 
+y tengo bastantes ganas de seguir aprendiendo.
+
+Att: Davincho28
+
+
+
 Welcome to **Shopify Simulator**, a lightweight environment designed to help developers explore Shopify's Liquid templating language and dynamic section-based architecture. This project simulates Shopify's core functionalities, enabling developers to practice creating reusable components, iterating through data, and working with dynamic settings.
 
 ---
