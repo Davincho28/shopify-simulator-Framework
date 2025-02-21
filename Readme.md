@@ -8,7 +8,7 @@ y tengo bastantes ganas de seguir aprendiendo.
 
 Att: Davincho28
 
-
+---
 
 Welcome to **Shopify Simulator**, a lightweight environment designed to help developers explore Shopify's Liquid templating language and dynamic section-based architecture. This project simulates Shopify's core functionalities, enabling developers to practice creating reusable components, iterating through data, and working with dynamic settings.
 
