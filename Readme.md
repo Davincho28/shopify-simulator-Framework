@@ -4,7 +4,7 @@ Muchas gracias por darme la oportunidad de participar en esta prueba tecnica, fa
 y organizar mejor las carpetas y optimizar el codigo, me diverti haciendo este aplicativo y es una experiencia grandisima
 ya que no habia indagado mucho sobre liquid, me entere que era el lenguaje de shopify, quedo atento a cualquier novedad,
 seguire trabajando en este proyecto cuando tenga tiempo y pulir bastante los detalles ya que me causo una curiosidad enorme 
-y tengo bastantes ganas de seguir aprendiendo.
+y tengo bastantes ganas de seguir aprendiendo 👌😊.
 
 Att: Davincho28
 
