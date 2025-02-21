@@ -5,8 +5,37 @@
   box-sizing: border-box;
 }
 
+picture {
+  display: flex;
+  justify-content: center;
+  /* Centra la imagen horizontalmente */
+  align-items: center;
+  /* Centra la imagen verticalmente */
+  width: 100%;
+}
+
+picture img {
+  width: 80%;
+  /* Ajusta el tamaño de la imagen */
+  height: auto;
+  display: block;
+}
+
+a{
+  text-decoration: none;
+  color: white;
+}
+a:hover{
+  color: #6a00f4;
+}
+
+
+html{
+  scroll-behavior: smooth;
+}
+
 body {
-  background-color: #1B1B1B;
+  background-color: #1b1b1b;
 }
 
 h1 {
@@ -49,6 +78,38 @@ h1 {
   align-items: center;
 }
 
+.headernavbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1a1a1a;
+  padding: 10px;
+  gap: 15px;
+}
+
+.headernavbar p {
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.cart-btn {
+  background-color: #7d2ae8;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
 .weaccept {
   display: flex;
   justify-content: center;
@@ -57,28 +118,40 @@ h1 {
   border: 2px purple solid;
   gap: 10px;
   padding: 0px;
+  align-items: center;
+  background-color: #1e1e1e;
+  padding: 10px 20px;
+  border-radius: 30px;
+  border: 2px solid #6a00ff;
+}
+
+.icons {
+  display: flex;
+  gap: 10px;
+}
+
+.icons img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #444;
+  padding: 5px;
 }
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  background-color: blueviolet;
-  grid-gap: 4px;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(250px, 1fr)
+  );
+  gap: 10px;
+  justify-content: center;
+  align-items: start;
+  padding: 20px;
 }
 
 button {
   background-color: brown;
-}
-
-.latest-collection {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-}
-
-.latest-collection img {
-  width: 250px;
-  height: 300px;
 }
 
 .divcenter {
@@ -92,10 +165,10 @@ button {
   display: flex;
   justify-content: center;
   color: white;
-  gap: 10px; 
+  gap: 10px;
 }
 
-.navlink{
+.navlink {
   position: relative;
   font-size: 20px;
   font-weight: bold;

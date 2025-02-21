@@ -1,12 +1,83 @@
-<div>
-    {% if product.image | asset_url %}
-        <picture>
-            <source srcset="{{ 'assets/' | append: product.image }}" type="image/avif">
-            <img src={{ product.image | asset_url | img_tag:product.title}} style="height: 200px; width: 200px;" >
-        </picture>
-        <h1>{{product.title}} {{product.price}}</h1>
-        <button>
-          carrito de compras
-        </button>
-    {% endif %}
+<div class="product-card">
+
+    <picture class="product-image">
+        <source srcset="{{ 'assets/' | append: product.image }}" type="image/avif">
+        <img src={{ product.image | asset_url | img_tag:product.title}} alt="{{ product.title }}">
+    </picture>
+
+    <div class="product-info">
+        <h3>{{ product.title }}</h3>
+        <p class="price">${{ product.price }} USD</p>
+    </div>
+
+    <button class="cart-button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 12.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+        </svg>
+    </button>
 </div>
+
+<style>
+    .product-card {
+        background-color: #1E1E1E;
+        border-radius: 10px;
+        padding: 15px;
+        width: 220px;
+        text-align: center;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        border: 2px solid purple;
+    }
+
+    .product-card:hover{
+        border: 2px solid #cc00ff;
+        border-radius: 10px;
+    }
+
+    .product-image img {
+        width: 180px;
+        height: auto;
+        border-radius: 5px;
+    }
+
+    .product-image:hover img {
+        transform: scale(1.1);
+        border: 2px solid #ffffff;
+        border-radius: 10px;
+    }
+
+    .product-info {
+        color: white;
+        font-size: 14px;
+    }
+
+    .price {
+        font-weight: bold;
+        color: #bbb;
+    }
+
+    .cart-button {
+        background-color: purple;
+        border: none;
+        padding: 10px;
+        border-radius: 50%;
+        cursor: pointer;
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .cart-button svg {
+        width: 18px;
+        height: 18px;
+    }
+</style>

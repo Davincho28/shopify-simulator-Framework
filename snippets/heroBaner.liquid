@@ -1,0 +1,43 @@
+<div class="container">
+  <picture>
+    <source srcset="assets/hero_banner_img.avif" type="image/avif">
+    <img src={{ settings["hero-banner"].settings.background_image | asset_url | img_tag:
+      settings["hero-banner"].settings.marquee_text }} style="width: 1280px; height: 720px;">
+  </picture>
+  <button class="cta-button">VIEW THE COLLECTION</button>
+</div>
+
+<style>
+    .container {
+    position: relative;
+    text-align: center;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    /* Centra la imagen horizontalmente */
+    align-items: center;
+    /* Centra la imagen verticalmente */
+  }
+
+  .cta-button {
+    position: absolute;
+    bottom: 10%;
+    left: 20%;
+    padding: 15px 30px;
+    background-color: #7D3CFC;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cta-button:hover {
+    background-color: #5a2cb9;
+  }
+</style>

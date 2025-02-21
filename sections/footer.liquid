@@ -1,128 +1,90 @@
-
 {% comment %} Banner hero_banner {% endcomment %}
-<div class="container">
-  <picture>
-    <source srcset="assets/hero_banner_img.avif" type="image/avif">
-    <img src={{ settings["hero-banner"].settings.background_image | asset_url | img_tag:
-      settings["hero-banner"].settings.marquee_text }} style="width: 1280px; height: 720px;">
-  </picture>
-  <button class="cta-button">VIEW THE COLLECTION</button>
-</div>
+{% render  "heroBaner.liquid" %}
 
-{% comment %} Section SHUFFLE ESSENTIALS  {% endcomment %}
-<div class="marquee">
-  <h1>SHUFFLE ESSENTIALS <span style="color: #5a2cb9;">✦</span> SHUFFLE ESSENTIALS <span
-      style="color: #5a2cb9;">✦</span> SHUFFLE ESSENTIALS <span style="color: #5a2cb9;">✦</span> SHUFFLE ESSENTIALS
-    <span style="color: #5a2cb9;">✦</span></h1>
-</div>
+{% comment %} Section SHUFFLE ESSENTIALS {% endcomment %}
+{% render  "shuffleEssentials.liquid" %}
 
-{% comment %} Renderizacion de tarjetas {% endcomment %}
+{% comment %} all Products {% endcomment %}
 <div class="cards">
   {% for product in products %}
-    {% render 'cards', product: product %}
+  <div class="card">{% render 'cards', product: product %}</div>
   {% endfor %}
 </div>
-<button>VIEW ALL</button>
-
+{% comment %} btn view all {% endcomment %}
+<div class="divcenter">
+<button class="view-all-btn" id="showMore">VIEW ALL</button>
+</div>
+<br>
 {% comment %} Section LATEST COLLECTION {% endcomment %}
-<div>
-  <h1 style="text-align: center;"><span style="color: #5a2cb9;">✦</span> LATEST COLLECTION <span style="color: #5a2cb9;">✦</span></h1>
-  {% comment %} Images {% endcomment %}
-  <div class="latest-collection">
-    <picture>
-      <source srcset="assets/ket_club.avif" type="image/avif">
-      <img src={{ "ket_club.avif" | asset_url | img_tag: "ket_club" }} style="width: 250px; height: 250px;">
-      {% comment %} <h3 style="color: white;">{{settings["names"].settings.ket_club}}</h3> {% endcomment %}
-    </picture>
-    <picture>
-      <source srcset="assets/shuffle_essentials.avif" type="image/avif">
-      <img src={{ "shuffle_essentials.avif" | asset_url | img_tag: "shuffle_essentials" }} style="width: 250px; height: 250px;">
-    </picture>
-  </div>
-  <div class="divcenter">
-    <picture>
-      <source srcset="assets/homepage_bottom_banner.avif" type="image/avif">
-      <img src={{ "homepage_bottom_banner.avif" | asset_url | img_tag: "homepage_bottom_banner" }} style="width: 550px; height: 250px;">
-    </picture>
-  </div>
+{% render 'latestCollection.liquid' %}
+
+
+
+{% comment %} Styles {% endcomment %}
+<style>
+  /* btn view all */
+  .view-all-btn {
+    background-color: #8A2BE2;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+
+  .view-all-btn:hover {
+    background-color: #6a1bbd;
+    transform: scale(1.05);
+  }
+
+  .view-all-btn:active {
+    transform: scale(0.95);
+  }
 
   
-{% comment %} Styles {% endcomment %}
-  <style>
-    .marquee {
-      white-space: nowrap;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      background-color: #1B1B1B;
-      padding: 10px 0;
+
+  @keyframes scrollText {
+    from {
+      transform: translateX(100%);
     }
 
-    .marquee h1 {
-      display: inline-block;
-      font-size: 50px;
-      font-weight: bold;
-      color: white;
-      text-transform: uppercase;
-      animation: scrollText 10s linear infinite;
+    to {
+      transform: translateX(-100%);
     }
+  }
+</style>
 
-    @keyframes scrollText {
-      from {
-        transform: translateX(100%);
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+  const cards = document.querySelectorAll(".card");
+  let visibleCount = 4;
+
+  // Oculta todos menos los primeros 4
+  cards.forEach((card, index) => {
+    if (index >= visibleCount) {
+      card.style.display = "none";
+    }
+  });
+
+  document.getElementById("showMore").addEventListener("click", function () {
+    // Muestra 4 más
+    visibleCount += 4; 
+
+    cards.forEach((card, index) => {
+      if (index < visibleCount) {
+        card.style.display = "block";
       }
+    });
 
-      to {
-        transform: translateX(-100%);
-      }
+    // Oculta el botón cuando no hay más productos
+    if (visibleCount >= cards.length) {
+      this.style.display = "none"; 
     }
-
-    .container {
-      position: relative;
-      text-align: center;
-      max-width: 100%;
-      display: flex;
-      justify-content: center;
-      /* Centra la imagen horizontalmente */
-      align-items: center;
-      /* Centra la imagen verticalmente */
-    }
-
-    picture {
-      display: flex;
-      justify-content: center;
-      /* Centra la imagen horizontalmente */
-      align-items: center;
-      /* Centra la imagen verticalmente */
-      width: 100%;
-    }
-
-    picture img {
-      width: 80%;
-      /* Ajusta el tamaño de la imagen */
-      height: auto;
-      display: block;
-    }
-
-    .cta-button {
-      position: absolute;
-      bottom: 10%;
-      left: 20%;
-      padding: 15px 30px;
-      background-color: #7D3CFC;
-      color: white;
-      font-size: 16px;
-      font-weight: bold;
-      border: none;
-      cursor: pointer;
-      text-transform: uppercase;
-      border-radius: 5px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .cta-button:hover {
-      background-color: #5a2cb9;
-    }
-  </style>
+  });
+});
+</script>

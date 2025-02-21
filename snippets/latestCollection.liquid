@@ -1,0 +1,53 @@
+<section id="collections">
+  <div>
+  <h1 style="text-align: center;"><span style="color: #5a2cb9;">✦</span> LATEST COLLECTION <span
+      style="color: #5a2cb9;">✦</span>
+  </h1>
+  {% comment %} Images {% endcomment %}
+  <div class="latest-collection">
+    <div class="collection-item">
+      <picture>
+        <source srcset="assets/ket_club.avif" type="image/avif">
+        <img src={{ "ket_club.avif" | asset_url | img_tag: "ket_club" }} alt="Ket Club">
+      </picture>
+    </div>
+
+    <div class="collection-item">
+      <picture>
+        <source srcset="assets/shuffle_essentials.avif" type="image/avif">
+        <img src={{ "shuffle_essentials.avif" | asset_url | img_tag: "shuffle_essentials" }} alt="Shuffle Essentials">
+      </picture>
+    </div>
+  </div>
+  {% comment %} Otra page {% endcomment %}
+  <div class="divcenter">
+    <picture>
+      <source srcset="assets/homepage_bottom_banner.avif" type="image/avif">
+      <img src={{ "homepage_bottom_banner.avif" | asset_url | img_tag: "homepage_bottom_banner" }}
+        style="width: 550px; height: 250px;">
+    </picture>
+  </div>
+</div>
+</section>
+
+<style>
+  .latest-collection {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .collection-item {
+    position: relative;
+    width: 300px;
+    overflow: hidden;
+    border-radius: 10px;
+  }
+
+  .collection-item img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+  }
+</style>
