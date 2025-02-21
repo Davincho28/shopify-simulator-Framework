@@ -36,6 +36,12 @@
       "settings":{
         "ket_club":"ket_club"
       }
+    },
+    "logo":{
+      "type":"text",
+      "settings":{
+        "url":"logoShuffle.png"
+      }
     }
   }
 }
